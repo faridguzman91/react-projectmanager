@@ -33,6 +33,7 @@ class App extends Component {
             <GlobalStyle />
             <appWrapper>
                 <Header />
+                {/* data source aanhaken aan wrappers */}
                 <Board lanes={lanes} dataSource={'../../assets/data.json'} />
                 <Tickets dataSource={'../../assets/data.json'} />
             </appWrapper>

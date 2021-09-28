@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import Lane from '../components/lane/lane'
+//import HOC vanuit datafetching
 import withDataFetching from '../withDataFetching';
 
 const BoardWrapper = styled.div`
@@ -56,18 +57,26 @@ class Board extends React.Component {
         this.onDragOver = this.onDragOver.bind(this);
         this.onDrop = this.onDrop.bind(this);
     }
+
+    //check als props zijn veranderd, zo ja, toevoegen naar state
     componentDidUpdate(prevProps) {
         if (prevProps.data !== this.props.data) {
             this.setState({tickets: this.props.data});
         }
     }
 
+    //event handlers draggen, droppen, drag over
+
+    //data transfer naar  ( datatransfer object ) component met id en event als arg.
     onDragStart = (e, id) => {
         e.dataTransfer.setData('id', id);
     };
+
+    //prevent default, drop element in ander element 
     onDragOver = e => {
         e.preventDefault();
     };
+
     onDrop = (e, laneId) => {
         const id = e.dataTransfer.getData('id');
         //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt

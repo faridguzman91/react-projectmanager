@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+//import datafetcher
 import withDataFetching from '../withDataFetching';
 import Ticket from '../components/ticket/ticket'
+
+//wrapper met styled=-components, function components exporteerbaar HOC
 
 const TicketsWrapper = styled.div `
 display: flex;

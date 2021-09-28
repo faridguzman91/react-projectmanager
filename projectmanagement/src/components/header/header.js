@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const headerWrapper = styled.div`
-background-color: blue;
+const HeaderWrapper = styled.div`
+background-color: black;
 height: 100%;
 display: flex;
 flex-direction:column;
@@ -18,9 +18,9 @@ pointer-events: none;
 `;
 
 const Header = () => (
-    <headerWrapper>
-        <Title> project manager bord </Title>
-    </headerWrapper>
+    <HeaderWrapper>
+        <Title> kanbanbord </Title>
+    </HeaderWrapper>
 ) 
 
 export default Header;
