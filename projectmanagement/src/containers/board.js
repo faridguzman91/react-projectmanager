@@ -66,6 +66,7 @@ class Board extends React.Component {
     }
 
     //event handlers draggen, droppen, drag over
+    //https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
 
     //data transfer naar  ( datatransfer object ) component met id en event als arg.
     onDragStart = (e, id) => {
@@ -83,6 +84,10 @@ class Board extends React.Component {
         const tickets = this.state.tickets.filter( ticket => {
             if (ticket.id === parseInt(id)) {
             ticket.lane = laneId;
+
+            // if (ticket.id === id) {
+            //     ticket.board = boardId;
+            
         }
         return ticket;
             });

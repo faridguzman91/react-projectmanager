@@ -31,7 +31,8 @@ const Alert = styled.div`
 `;
 
 const Lane = ({
-  laneId,
+//  laneId,
+  boardId,
   tickets,
   loading,
   error,
@@ -42,7 +43,7 @@ const Lane = ({
 }) => (
   <LaneWrapper
     onDragOver={e => onDragOver(e)}
-    onDrop={e => onDrop(e, laneId)}
+    onDrop={e => onDrop(e, boardId)}
   >
     <Title>{title}</Title>
     {(loading || error) && <Alert>{loading ? 'Loading...' : error}</Alert>}

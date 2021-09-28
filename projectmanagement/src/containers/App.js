@@ -4,6 +4,7 @@ import Board from '../containers/board';
 import Tickets from '../containers/tickets';
 import Header from '../components/header/header'
 
+
 const GlobalStyle = createGlobalStyle `
  body {
      margin: 0;
@@ -14,7 +15,7 @@ const GlobalStyle = createGlobalStyle `
  }
 `;
 
-const appWrapper = styled.div`
+const AppWrapper = styled.div`
 text-align: center;
 `;
 
@@ -31,12 +32,12 @@ class App extends Component {
         return (
             <>
             <GlobalStyle />
-            <appWrapper>
+            <AppWrapper>
                 <Header />
                 {/* data source aanhaken aan wrappers */}
                 <Board lanes={lanes} dataSource={'../../assets/data.json'} />
                 <Tickets dataSource={'../../assets/data.json'} />
-            </appWrapper>
+            </AppWrapper>
             </>
 
         );
