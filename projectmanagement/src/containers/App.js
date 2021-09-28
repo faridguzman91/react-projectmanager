@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Board from '.Board';
-import Tickets from './Tickets';
+import Board from '../containers/board';
+import Tickets from '../containers/tickets';
 import Header from '../components/header/header'
 
 const GlobalStyle = createGlobalStyle `
@@ -38,6 +38,8 @@ class App extends Component {
             </appWrapper>
             </>
 
-        )
+        );
     }
 }
+
+export default App;

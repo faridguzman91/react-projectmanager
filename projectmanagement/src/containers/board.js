@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import Lane from '../component/lane/lane'
+import Lane from '../components/lane/lane'
 import withDataFetching from '../withDataFetching';
 
 const boardWrapper = styled.div`
@@ -14,7 +14,40 @@ margin: 5%;
 }
 `;
 
-class Board extends Component {
+class Board extends React.Component {
+
+    //fetch data vanuit data bestand, mounten en fetchen try..catch
+    //constructor() {
+    //this.state = {
+        // data: [],
+        // loading: true,
+        // error: ''
+//     }  
+// }
+
+// async componentDidMount() {
+//     try {
+//         const tickets = await fetch('../../assets/data.json');
+//         const ticketsJSON = await tickets.json();
+
+//  if (ticketsJSON) {
+//      this.setState({
+//      data: ticketsJSON,
+//     loading: false,
+//      });
+//      }
+//      } catch(error) {
+//      this.setState({
+//     loading: false,
+//      error: error.message,
+//      });
+//      }
+//      }
+//     }
+// }
+    //}
+
+
     constructor() {
         super();
         this.state = {
@@ -53,7 +86,9 @@ class Board extends Component {
             
             
     render() {
-        const lanes = { lanes, loading, error } = this.props;
+        const { lanes, loading, error } = this.props;
+
+        //tickets uitdelen over lanen, destructure
 
         return (
             <boardWrapper>
@@ -76,4 +111,4 @@ class Board extends Component {
     }
 }
 
-export default Board;
+export default withDataFetching(Board);
