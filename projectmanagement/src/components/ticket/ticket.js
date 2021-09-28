@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const ticketWrapper = styled.div `
+const TicketWrapper = styled.div `
 background: darkGray;
 padding: 20px;
 border-radius: 20px;
@@ -22,11 +22,11 @@ width: 100%;
 `;
 
 const Ticket = ({ marginRight, onDragStart, ticket }) => (
-    <ticketWrapper draggable onDragStart={e => onDragStart && onDragStart(e, ticket.id)} marginRight={marginRight}>
+    <TicketWrapper draggable onDragStart={e => onDragStart && onDragStart(e, ticket.id)} marginRight={marginRight}>
         <Title>{ticket.title}</Title>
         <Body>{ticket.body}</Body>
 
-    </ticketWrapper>
+    </TicketWrapper>
 );
 
 export default Ticket;

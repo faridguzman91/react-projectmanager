@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import withDataFetching from '../withDataFetching';
 import Ticket from '../components/ticket/ticket'
 
-const ticketsWrapper = styled.div `
+const TicketsWrapper = styled.div `
 display: flex;
 justify-content: space-between;
 flex-direction: row;
@@ -19,12 +19,12 @@ text-align: center;
 `;
 
 const Tickets = ({ loading, error, data }) => (
-     <ticketsWrapper > {
+     <TicketsWrapper > {
             (loading || error) && < Alert > { loading ? 'Loading...' : error } </Alert>}
             {data.map(ticket => (
                 <Ticket key={ticket.id} marginRight ticket={ticket} />
             ))}
-            </ticketsWrapper>
+            </TicketsWrapper>
 );
 
 export default withDataFetching(Tickets);

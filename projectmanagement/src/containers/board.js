@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Lane from '../components/lane/lane'
 import withDataFetching from '../withDataFetching';
 
-const boardWrapper = styled.div`
+const BoardWrapper = styled.div`
 display: flex;
 justify-content: space-between;
 flex-direction: row;
@@ -91,7 +91,7 @@ class Board extends React.Component {
         //tickets uitdelen over lanen, destructure
 
         return (
-            <boardWrapper>
+            <BoardWrapper>
                 {lanes.map(lane => (
                     <Lane key={ lane.id } 
                           title={ lane.title }
@@ -105,7 +105,7 @@ class Board extends React.Component {
                           )}
                           />
                 ))}
-            </boardWrapper>
+            </BoardWrapper>
 
         );
     }
